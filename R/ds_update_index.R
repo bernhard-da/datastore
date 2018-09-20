@@ -2,21 +2,21 @@
 #'
 #' updates index file (json-format) of a given datastore
 #'
-#' @param path path to datastore
+#' @param ds path to datastore
 #' @param verbose (logical) if \code{TRUE}, additional messages will be printed to prompt
 #' @return \code{NULL}
 #' @export
 #'
 #' @examples
 #' ## not yet
-ds_update_index <- function(path, verbose=TRUE) {
-  ds_isvalid(path)
+ds_update_index <- function(ds, verbose=TRUE) {
+  ds_isvalid(ds)
 
-  files <- list.files(ds_filepath(path))
+  files <- list.files(ds_filepath(ds))
   out <- list()
   out$last_indexed <- ds_timestamp()
   if (length(files)>0) {
-    files_o <- list.files(ds_filepath(path), full.names=TRUE)
+    files_o <- list.files(ds_filepath(ds), full.names=TRUE)
 
     files <- sub("[.]rds", "", files)
     files <- strsplit(files, "_-__-_")
@@ -33,7 +33,7 @@ ds_update_index <- function(path, verbose=TRUE) {
     out$info <- NA
   }
 
-  cat(toJSON(out), file=ds_datasetfile(path))
+  cat(toJSON(out), file=ds_datasetfile(ds))
   if (verbose) {
     message(paste("DATASETS file successfully updated!"))
   }

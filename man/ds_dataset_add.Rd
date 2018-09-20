@@ -4,10 +4,10 @@
 \alias{ds_dataset_add}
 \title{ds_dataset_add}
 \usage{
-ds_dataset_add(path, dataset, name, version)
+ds_dataset_add(ds, dataset, name, version)
 }
 \arguments{
-\item{path}{path to datastore}
+\item{ds}{path to datastore}
 
 \item{dataset}{the R-data object that should be put into the datastore}
 

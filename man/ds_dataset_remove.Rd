@@ -4,14 +4,16 @@
 \alias{ds_dataset_remove}
 \title{ds_dataset_remove}
 \usage{
-ds_dataset_remove(path, name, version = NULL)
+ds_dataset_remove(ds, name, version = NULL, verbose = TRUE)
 }
 \arguments{
-\item{path}{path to datastore}
+\item{ds}{path to datastore}
 
 \item{name}{name of data-object for which a specific version should be removed}
 
 \item{version}{(number) version of data-object; if \code{NULL}, all versions will be removed}
+
+\item{verbose}{(logical) if \code{TRUE}, additional messages will be printed to prompt}
 }
 \value{
 \code{NULL}

@@ -2,7 +2,7 @@
 #'
 #' reads (json)-index file about all versioned data-objects from specified datastore
 #'
-#' @param path path to datastore
+#' @param ds path to datastore
 #'
 #' @return a list containing the following elements
 #' \itemize{
@@ -14,7 +14,7 @@
 #'
 #' @examples
 #' ## not yet
-ds_read_index <- function(path) {
+ds_read_index <- function(ds) {
   # read json of dataset files
-  return(fromJSON(ds_datasetfile(path)))
+  return(fromJSON(ds_datasetfile(ds)))
 }

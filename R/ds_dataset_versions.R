@@ -2,7 +2,7 @@
 #'
 #' returns a data.frame (or \code{NULL}) containing information on all versions of the requested data-object given by argument \code{name}
 #'
-#' @param path path to datastore
+#' @param ds path to datastore
 #' @param name name of data-object
 #' @param verbose (logical) if TRUE, additional messages will be printed to prompt
 #'
@@ -11,20 +11,20 @@
 #'
 #' @examples
 #' ## not yet
-ds_dataset_versions <- function(path, name, verbose=TRUE) {
-  ds_isvalid(path)
+ds_dataset_versions <- function(ds, name, verbose=TRUE) {
+  ds_isvalid(ds)
   stopifnot(is_scalar_logical(verbose))
 
-  res <- ds_read_index(path)
+  res <- ds_read_index(ds)
   if (!is.data.frame(res$info)) {
     if (verbose) {
-      message(paste0("no files in datastore -> please use ds_dataset_add()"))
+      message(paste("no files in datastore",shQuote(ds_info(ds, verbose=FALSE)$ds_name),"--> please use ds_dataset_add()"))
     }
     return(invisible(NULL))
   }
   if (!name %in% res$datasets) {
     if (verbose) {
-      message(paste(shQuote(name),"not in datastore"))
+      message(paste(shQuote(name),"not in datastore",shQuote(ds_info(ds, verbose=FALSE)$ds_name)))
     }
     return(invisible(NULL))
   }

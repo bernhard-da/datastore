@@ -4,10 +4,10 @@
 \alias{ds_dataset_exists}
 \title{ds_dataset_exists}
 \usage{
-ds_dataset_exists(path, name, version = NULL, verbose = TRUE)
+ds_dataset_exists(ds, name, version = NULL, verbose = TRUE)
 }
 \arguments{
-\item{path}{path to datastore}
+\item{ds}{path to datastore}
 
 \item{name}{name of data-object}
 
@@ -16,7 +16,7 @@ ds_dataset_exists(path, name, version = NULL, verbose = TRUE)
 \item{verbose}{(logical) if \code{TRUE}, additional messages will be printed to prompt}
 }
 \value{
-\code{TRUE} if the data-object is available from the datastore given by argument \code{path} or \code{FALSE} else.
+\code{TRUE} if the data-object is available from the datastore given by argument \code{ds} or \code{FALSE} else.
 }
 \description{
 ds_dataset_exists

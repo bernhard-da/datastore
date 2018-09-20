@@ -4,10 +4,10 @@
 \alias{ds_dataset_get}
 \title{ds_dataset_get}
 \usage{
-ds_dataset_get(path, name, version)
+ds_dataset_get(ds, name, version)
 }
 \arguments{
-\item{path}{path to datastore}
+\item{ds}{path to datastore}
 
 \item{name}{name of data-object to retrieve}
 

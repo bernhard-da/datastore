@@ -1,7 +1,7 @@
 #' ds_info
 #'
-#' @param path path to datastore
-#'
+#' @param ds path to datastore
+#' @param verbose (logical) if \code{TRUE}, additional messages will be printed to prompt
 #' @return a list with the following elements
 #' \itemize{
 #' \item \strong{name}: name of the datastore
@@ -15,15 +15,20 @@
 #'
 #' @examples
 #' ## not yet
-ds_info <- function(path) {
+ds_info <- function(ds, verbose=TRUE) {
   print.datastore <- function(x, ...) {
-    message(paste("The datastore",shQuote(x$name),"was created at",shQuote(x$created_at)))
+    message(paste("The datastore",shQuote(x$ds_name),"was created at",shQuote(x$created_at)))
     message(paste("The root is located at", shQuote(x$datastore_path)))
 
+    if (x$nr_datasets>0) {
+      message(paste("This datastore contains", x$nr_files,"files of",x$nr_datasets,"datasets"))
+    } else {
+      message(paste("This datastore is currently empty"))
+    }
   }
-  ds_isvalid(path)
-  res <- fromJSON(ds_infofile(path))
-  datafiles <- fromJSON(ds_datasetfile(path))
+  ds_isvalid(ds)
+  res <- fromJSON(ds_infofile(ds))
+  datafiles <- fromJSON(ds_datasetfile(ds))
   if (!is.data.frame(datafiles$info)) {
     res$datasets <- NA
     res$nr_datasets <- 0
@@ -34,6 +39,9 @@ ds_info <- function(path) {
     res$nr_files <- nrow(datafiles$info)
   }
   class(res) <- "datastore"
-  print(res)
-  invisible(res)
+  if (verbose) {
+    print(res)
+    return(invisible(res))
+  }
+  return(res)
 }

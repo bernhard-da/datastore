@@ -4,10 +4,10 @@
 \alias{ds_update_index}
 \title{ds_update_index}
 \usage{
-ds_update_index(path, verbose = TRUE)
+ds_update_index(ds, verbose = TRUE)
 }
 \arguments{
-\item{path}{path to datastore}
+\item{ds}{path to datastore}
 
 \item{verbose}{(logical) if \code{TRUE}, additional messages will be printed to prompt}
 }

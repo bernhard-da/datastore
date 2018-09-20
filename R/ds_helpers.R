@@ -1,23 +1,23 @@
 ## helpers
-ds_isvalid <- function(path) {
-  stopifnot(is_scalar_character(path))
-  finfo <- file.path(path, "datastore","DATASTORE_INFO")
+ds_isvalid <- function(ds) {
+  stopifnot(is_scalar_character(ds))
+  finfo <- file.path(ds, "datastore","DATASTORE_INFO")
   stopifnot(file.exists(finfo))
   res <- fromJSON(finfo)
-  stopifnot(is.list(res), length(res)==3, names(res)==c("name","created_at","datastore_path"))
+  stopifnot(is.list(res), length(res)==3, names(res)==c("ds_name","created_at","datastore_path"))
   return(invisible(TRUE))
 }
 
-ds_infofile <- function(path) {
-  file.path(path, "datastore", "DATASTORE_INFO")
+ds_infofile <- function(ds) {
+  file.path(ds, "datastore", "DATASTORE_INFO")
 }
-ds_datasetfile <- function(path) {
-  ds_isvalid(path)
-  file.path(path, "datastore", "DATASETS")
+ds_datasetfile <- function(ds) {
+  ds_isvalid(ds)
+  file.path(ds, "datastore", "DATASETS")
 }
 
-ds_filepath <- function(path) {
-  file.path(path, "datastore", "files")
+ds_filepath <- function(ds) {
+  file.path(ds, "datastore", "files")
 }
 
 ds_timestamp <- function() {

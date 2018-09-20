@@ -4,10 +4,10 @@
 \alias{ds_dataset_versions}
 \title{ds_dataset_versions}
 \usage{
-ds_dataset_versions(path, name, verbose = TRUE)
+ds_dataset_versions(ds, name, verbose = TRUE)
 }
 \arguments{
-\item{path}{path to datastore}
+\item{ds}{path to datastore}
 
 \item{name}{name of data-object}
 

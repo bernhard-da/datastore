@@ -4,10 +4,10 @@
 \alias{ds_read_index}
 \title{ds_read_index}
 \usage{
-ds_read_index(path)
+ds_read_index(ds)
 }
 \arguments{
-\item{path}{path to datastore}
+\item{ds}{path to datastore}
 }
 \value{
 a list containing the following elements

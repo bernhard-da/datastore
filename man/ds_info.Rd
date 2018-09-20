@@ -4,10 +4,12 @@
 \alias{ds_info}
 \title{ds_info}
 \usage{
-ds_info(path)
+ds_info(ds, verbose = TRUE)
 }
 \arguments{
-\item{path}{path to datastore}
+\item{ds}{path to datastore}
+
+\item{verbose}{(logical) if \code{TRUE}, additional messages will be printed to prompt}
 }
 \value{
 a list with the following elements
