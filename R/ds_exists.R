@@ -1,4 +1,4 @@
-#' ds_dataset_exists
+#' ds_exists
 #'
 #' @param ds path to datastore
 #' @param name name of data-object
@@ -9,7 +9,7 @@
 #'
 #' @examples
 #' ## not yet
-ds_dataset_exists <- function(ds, name, version=NULL, verbose=TRUE) {
+ds_exists <- function(ds, name, version=NULL, verbose=TRUE) {
   ds_isvalid(ds)
 
   if (!is.null(version)) {

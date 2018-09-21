@@ -18,7 +18,7 @@ ds_add <- function(ds, dataset, name, version) {
   stopifnot(is_scalar_integerish(version))
 
   # version already exists?
-  if (ds_dataset_exists(ds, name=name, version=version, verbose=FALSE)) {
+  if (ds_exists(ds, name=name, version=version, verbose=FALSE)) {
     stop(paste("dataset", substitute(name),"in version",version, "already exists in datastore."))
   }
 

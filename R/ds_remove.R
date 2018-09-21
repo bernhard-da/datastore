@@ -17,7 +17,7 @@ ds_remove <- function(ds, name, version=NULL, verbose=TRUE) {
   if (!is.null(version)) {
     stopifnot(is_scalar_integerish(version))
   }
-  res <- ds_dataset_exists(ds, name=name, version=version, verbose=FALSE)
+  res <- ds_exists(ds, name=name, version=version, verbose=FALSE)
   if (!res) {
     stop(paste("dataset", shQuote(substitute(name)),"does not exist in datastore",shQuote(ds_info(ds, verbose=FALSE)$ds_name),"or required version is not available"), call.=FALSE)
   }

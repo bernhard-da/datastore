@@ -40,8 +40,8 @@
 #' ds_read_index(ds)
 #'
 #' ## check if dataset is available in datastore
-#' ds_dataset_exists(ds, "df2") # --> FALSE
-#' ds_dataset_exists(ds, "df")  # --> TRUE
+#' ds_exists(ds, "df2") # --> FALSE
+#' ds_exists(ds, "df")  # --> TRUE
 #'
 #' ## get information about datasets
 #' ds_versions(ds, "df")
