@@ -64,6 +64,9 @@ v1 <- ds_get(ds, ds_name="df", version=1); identical(v1, df_v1)
 v2 <- ds_get(ds, ds_name="df", version=2); identical(v2, df_v2)
 v3 <- ds_get(ds, ds_name="df", version=3); identical(v3, df_v3)
 
+## get latest version
+ds_get_latest(ds, ds_name="df")
+
 ## remove from datastore
 ds_remove(ds, ds_name="df2", version=NULL) # error
 ds_remove(ds, ds_name="df", version=1) # remove a specific version
