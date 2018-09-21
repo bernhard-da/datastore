@@ -17,11 +17,11 @@ ds_get <- function(ds, name, version) {
 
   res <- ds_versions(ds, name=name)
   if (nrow(res)==0) {
-    stop(paste("Dataset",shQuote(substitute(name)),"not found in datastore", shQuote(ds_info(ds, verbose=FALSE)$ds_name)), call.=FALSE)
+    stop(paste("Dataset",shQuote(substitute(name)),"not found in datastore"), call.=FALSE)
   }
 
   if (!version %in% res$version) {
-    stop(paste("Dataset",shQuote(substitute(name)),"not found in version",version,"in datastore",shQuote(ds_info(ds, verbose=FALSE)$ds_name)), call.=FALSE)
+    stop(paste("Dataset",shQuote(substitute(name)),"not found in version",version,"in datastore"), call.=FALSE)
   }
 
   fin <- res[res$version==version,"filepath"]

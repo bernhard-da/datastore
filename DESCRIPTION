@@ -1,7 +1,7 @@
 Package: datastore
 Type: Package
 Title: Creates a datastore which can contain versioned datasets
-Version: 0.1.0
+Version: 0.2.0
 Author: Bernhard Meindl <bernhard.meindl@gmail.com>
 Maintainer: Bernhard Meindl <bernhard.meindl@gmail.com>
 Description: This package implements a functionality to build a custom datastore that can contained different versions of a dataset based on ideas of miniCRAN.

@@ -24,7 +24,7 @@ ds_versions <- function(ds, name, verbose=TRUE) {
   }
   if (!name %in% res$datasets) {
     if (verbose) {
-      message(paste(shQuote(name),"not in datastore",shQuote(ds_info(ds, verbose=FALSE)$ds_name)))
+      message(paste(shQuote(name),"not in datastore"))
     }
     return(invisible(NULL))
   }

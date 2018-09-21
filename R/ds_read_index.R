@@ -16,5 +16,5 @@
 #' ## not yet
 ds_read_index <- function(ds) {
   # read json of dataset files
-  return(fromJSON(ds_datasetfile(ds)))
+  return(fromJSON(ds_infofile(ds)))
 }

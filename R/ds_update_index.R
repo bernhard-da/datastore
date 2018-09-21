@@ -12,8 +12,20 @@
 ds_update_index <- function(ds, verbose=TRUE) {
   ds_isvalid(ds)
 
-  files <- list.files(ds_filepath(ds))
   out <- list()
+
+  if (file.exists(ds_infofile(ds))) {
+    oldres <- ds_read_index(ds)
+    out$ds_name <- oldres$ds_name
+    out$created_at <- oldres$created_at
+    out$datastore_path <- oldres$datastore_path
+  } else {
+    out$ds_name <- "datastore"
+    out$created_at <- ds_timestamp()
+    out$datastore_path <- ds
+  }
+
+  files <- list.files(ds_filepath(ds))
   out$last_indexed <- ds_timestamp()
   if (length(files)>0) {
     files_o <- list.files(ds_filepath(ds), full.names=TRUE)
@@ -33,10 +45,9 @@ ds_update_index <- function(ds, verbose=TRUE) {
     out$info <- NA
   }
 
-  cat(toJSON(out), file=ds_datasetfile(ds))
+  cat(toJSON(out), file=ds_infofile(ds))
   if (verbose) {
-    message(paste("DATASETS file successfully updated!"))
+    message(paste("DATASTORE file successfully updated!"))
   }
-  # write json of dataset files
   return(invisible(NULL))
 }

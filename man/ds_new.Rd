@@ -4,12 +4,10 @@
 \alias{ds_new}
 \title{ds_new}
 \usage{
-ds_new(ds, ds_name = "datastore")
+ds_new(ds)
 }
 \arguments{
 \item{ds}{path to datastore}
-
-\item{ds_name}{name of datastore that should be created}
 }
 \description{
 This function creates a new local datastore at a specified destination folder
@@ -33,7 +31,7 @@ The folder structure of a repository
 \dontrun{
 ## create a datastore
 ds <- "/tmp/mydatastore"
-ds_new(ds, ds_name="myDatastore")
+ds_new(ds)
 list.files(ds, recursive=TRUE)
 ds_info(ds)
 

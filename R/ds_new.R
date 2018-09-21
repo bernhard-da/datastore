@@ -15,13 +15,12 @@
 #' }
 #'
 #' @param ds path to datastore
-#' @param ds_name name of datastore that should be created
 #' @export
 #' @examples
 #' \dontrun{
 #' ## create a datastore
 #' ds <- "/tmp/mydatastore"
-#' ds_new(ds, ds_name="myDatastore")
+#' ds_new(ds)
 #' list.files(ds, recursive=TRUE)
 #' ds_info(ds)
 #'
@@ -56,8 +55,8 @@
 #' ds_remove(ds, name="df", version=1) # remove a specific version
 #' ds_remove(ds, name="df", version=NULL) # remove all versions
 #' }
-ds_new <- function(ds, ds_name="datastore") {
-  stopifnot(is_scalar_character(ds), is_scalar_character(ds_name))
+ds_new <- function(ds) {
+  stopifnot(is_scalar_character(ds))
 
   if (file.exists(ds)) {
     stop("Directory at",shQuote(ds),"already exists")
@@ -69,12 +68,11 @@ ds_new <- function(ds, ds_name="datastore") {
   dir.create(file.path(ds,"datastore"))
   dir.create(file.path(ds,"datastore", "files"))
 
-  info <- list()
-  info$ds_name <- ds_name
-  info$created_at <- ds_timestamp()
-  info$datastore_path <- ds
-
-  cat(toJSON(info), file=ds_infofile(ds))
+  #info <- list()
+  #info$ds_name <- "datastore"
+  #info$created_at <- ds_timestamp()
+  #info$datastore_path <- ds
+  #cat(toJSON(info), file=ds_infofile(ds))
 
   ds_update_index(ds)
   message(paste("Datastore at",shQuote(file.path(ds)),"successfully initialized."))

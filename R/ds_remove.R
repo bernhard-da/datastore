@@ -19,7 +19,7 @@ ds_remove <- function(ds, name, version=NULL, verbose=TRUE) {
   }
   res <- ds_exists(ds, name=name, version=version, verbose=FALSE)
   if (!res) {
-    stop(paste("dataset", shQuote(substitute(name)),"does not exist in datastore",shQuote(ds_info(ds, verbose=FALSE)$ds_name),"or required version is not available"), call.=FALSE)
+    stop(paste("dataset", shQuote(substitute(name)),"does not exist in datastore or required version is not available"), call.=FALSE)
   }
 
   df <- ds_read_index(ds)$info
@@ -34,7 +34,7 @@ ds_remove <- function(ds, name, version=NULL, verbose=TRUE) {
     stop("some files could not be deleted from datastore")
   }
   if (verbose) {
-    message(paste(length(files_to_del),"file(s) successfully deleted from datastore",shQuote(ds_info(ds, verbose=FALSE)$ds_name)))
+    message(paste(length(files_to_del),"file(s) successfully deleted from datastore"))
   }
   ds_update_index(ds, verbose=FALSE)
   return(invisible(NULL))

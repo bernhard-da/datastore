@@ -28,15 +28,14 @@ ds_info <- function(ds, verbose=TRUE) {
   }
   ds_isvalid(ds)
   res <- fromJSON(ds_infofile(ds))
-  datafiles <- fromJSON(ds_datasetfile(ds))
-  if (!is.data.frame(datafiles$info)) {
+  if (is.na(res$datasets[1])) {
     res$datasets <- NA
     res$nr_datasets <- 0
     res$nr_files <- 0
   } else {
-    res$datasets <- datafiles$datasets
+    res$datasets <- res$datasets
     res$nr_datasets <- length(res$datasets)
-    res$nr_files <- nrow(datafiles$info)
+    res$nr_files <- nrow(res$info)
   }
   class(res) <- "datastore"
   if (verbose) {
