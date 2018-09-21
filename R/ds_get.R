@@ -15,7 +15,7 @@ ds_get <- function(ds, name, version) {
   ds_isvalid(ds)
   stopifnot(is_scalar_integerish(version))
 
-  res <- ds_dataset_versions(ds, name=name)
+  res <- ds_versions(ds, name=name)
   if (nrow(res)==0) {
     stop(paste("Dataset",shQuote(substitute(name)),"not found in datastore", shQuote(ds_info(ds, verbose=FALSE)$ds_name)), call.=FALSE)
   }

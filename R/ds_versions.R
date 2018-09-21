@@ -1,4 +1,4 @@
-#' ds_dataset_versions
+#' ds_versions
 #'
 #' returns a data.frame (or \code{NULL}) containing information on all versions of the requested data-object given by argument \code{name}
 #'
@@ -11,7 +11,7 @@
 #'
 #' @examples
 #' ## not yet
-ds_dataset_versions <- function(ds, name, verbose=TRUE) {
+ds_versions <- function(ds, name, verbose=TRUE) {
   ds_isvalid(ds)
   stopifnot(is_scalar_logical(verbose))
 

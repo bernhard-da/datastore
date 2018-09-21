@@ -44,7 +44,7 @@
 #' ds_dataset_exists(ds, "df")  # --> TRUE
 #'
 #' ## get information about datasets
-#' ds_dataset_versions(ds, "df")
+#' ds_versions(ds, "df")
 #'
 #' ## retrieve versioned datasets from datastore
 #' v1 <- ds_get(ds, name="df", version=1); identical(v1, df_v1)

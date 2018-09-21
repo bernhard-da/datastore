@@ -16,7 +16,7 @@ ds_dataset_exists <- function(ds, name, version=NULL, verbose=TRUE) {
     stopifnot(is_scalar_integerish(version))
   }
 
-  res <- ds_dataset_versions(ds, name=name, verbose=verbose)
+  res <- ds_versions(ds, name=name, verbose=verbose)
   if (is.null(res)) {
     return(FALSE)
   }
