@@ -3,6 +3,7 @@
 export(ds_add)
 export(ds_exists)
 export(ds_get)
+export(ds_get_latest)
 export(ds_info)
 export(ds_new)
 export(ds_read_index)
