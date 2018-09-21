@@ -4,12 +4,12 @@
 \alias{ds_remove}
 \title{ds_remove}
 \usage{
-ds_remove(ds, name, version = NULL, verbose = TRUE)
+ds_remove(ds, ds_name, version = NULL, verbose = TRUE)
 }
 \arguments{
 \item{ds}{path to datastore}
 
-\item{name}{name of data-object for which a specific version should be removed}
+\item{ds_name}{name of data-object for which a specific version should be removed}
 
 \item{version}{(number) version of data-object; if \code{NULL}, all versions will be removed}
 

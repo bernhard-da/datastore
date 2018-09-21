@@ -33,12 +33,12 @@ ds_update_index <- function(ds, verbose=TRUE) {
     files <- sub("[.]rds", "", files)
     files <- strsplit(files, "_-__-_")
     df <- data.frame(do.call("rbind", files), stringsAsFactors=FALSE)
-    colnames(df) <- c("name", "version","timestamp")
+    colnames(df) <- c("ds_name", "version","timestamp")
     df$filepath <- files_o
     df$sha512 <- sapply(files_o, function(x) { digest(x, algo="sha512")})
-    df <- df[order(df$name, df$version),]
+    df <- df[order(df$ds_name, df$version),]
 
-    out$datasets <- unique(df$name)
+    out$datasets <- unique(df$ds_name)
     out$info <- df
   } else {
     out$datasets <- NA

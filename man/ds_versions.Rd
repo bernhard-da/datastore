@@ -4,12 +4,12 @@
 \alias{ds_versions}
 \title{ds_versions}
 \usage{
-ds_versions(ds, name, verbose = TRUE)
+ds_versions(ds, ds_name, verbose = TRUE)
 }
 \arguments{
 \item{ds}{path to datastore}
 
-\item{name}{name of data-object}
+\item{ds_name}{name of data-object}
 
 \item{verbose}{(logical) if TRUE, additional messages will be printed to prompt}
 }
@@ -17,7 +17,7 @@ ds_versions(ds, name, verbose = TRUE)
 a \code{data.frame} or \code{NULL}
 }
 \description{
-returns a data.frame (or \code{NULL}) containing information on all versions of the requested data-object given by argument \code{name}
+returns a data.frame (or \code{NULL}) containing information on all versions of the requested data-object given by argument \code{ds_name}
 }
 \examples{
 ## not yet

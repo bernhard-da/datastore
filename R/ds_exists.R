@@ -1,7 +1,7 @@
 #' ds_exists
 #'
 #' @param ds path to datastore
-#' @param name name of data-object
+#' @param ds_name name of data-object
 #' @param version specific version of data-object to query; if \code{NULL}, it is checked if the object is versioned at least one time.
 #' @param verbose (logical) if \code{TRUE}, additional messages will be printed to prompt
 #' @return \code{TRUE} if the data-object is available from the datastore given by argument \code{ds} or \code{FALSE} else.
@@ -9,14 +9,14 @@
 #'
 #' @examples
 #' ## not yet
-ds_exists <- function(ds, name, version=NULL, verbose=TRUE) {
+ds_exists <- function(ds, ds_name, version=NULL, verbose=TRUE) {
   ds_isvalid(ds)
 
   if (!is.null(version)) {
     stopifnot(is_scalar_integerish(version))
   }
 
-  res <- ds_versions(ds, name=name, verbose=verbose)
+  res <- ds_versions(ds, ds_name=ds_name, verbose=verbose)
   if (is.null(res)) {
     return(FALSE)
   }

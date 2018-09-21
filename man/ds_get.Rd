@@ -4,12 +4,12 @@
 \alias{ds_get}
 \title{ds_get}
 \usage{
-ds_get(ds, name, version)
+ds_get(ds, ds_name, version)
 }
 \arguments{
 \item{ds}{path to datastore}
 
-\item{name}{name of data-object to retrieve}
+\item{ds_name}{name of data-object to retrieve}
 
 \item{version}{versionnumber of data-object to retrieve}
 }

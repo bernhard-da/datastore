@@ -4,12 +4,12 @@
 \alias{ds_exists}
 \title{ds_exists}
 \usage{
-ds_exists(ds, name, version = NULL, verbose = TRUE)
+ds_exists(ds, ds_name, version = NULL, verbose = TRUE)
 }
 \arguments{
 \item{ds}{path to datastore}
 
-\item{name}{name of data-object}
+\item{ds_name}{name of data-object}
 
 \item{version}{specific version of data-object to query; if \code{NULL}, it is checked if the object is versioned at least one time.}
 

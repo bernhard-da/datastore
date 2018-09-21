@@ -1,7 +1,7 @@
 #' ds_remove
 #'
 #' @param ds path to datastore
-#' @param name name of data-object for which a specific version should be removed
+#' @param ds_name name of data-object for which a specific version should be removed
 #' @param version (number) version of data-object; if \code{NULL}, all versions will be removed
 #' @param verbose (logical) if \code{TRUE}, additional messages will be printed to prompt
 #' @return \code{NULL}
@@ -9,21 +9,21 @@
 #'
 #' @examples
 #' ## not yet
-ds_remove <- function(ds, name, version=NULL, verbose=TRUE) {
+ds_remove <- function(ds, ds_name, version=NULL, verbose=TRUE) {
   ds_isvalid(ds)
 
-  stopifnot(is_scalar_character(name), is_scalar_logical(verbose))
+  stopifnot(is_scalar_character(ds_name), is_scalar_logical(verbose))
 
   if (!is.null(version)) {
     stopifnot(is_scalar_integerish(version))
   }
-  res <- ds_exists(ds, name=name, version=version, verbose=FALSE)
+  res <- ds_exists(ds, ds_name=ds_name, version=version, verbose=FALSE)
   if (!res) {
-    stop(paste("dataset", shQuote(substitute(name)),"does not exist in datastore or required version is not available"), call.=FALSE)
+    stop(paste("dataset", shQuote(substitute(ds_name)),"does not exist in datastore or required version is not available"), call.=FALSE)
   }
 
   df <- ds_read_index(ds)$info
-  df <- df[df$name==name,,drop=F]
+  df <- df[df$ds_name==ds_name,,drop=F]
   if (!is.null(version)) {
     df <- df[df$version==version,,drop=F]
   }
