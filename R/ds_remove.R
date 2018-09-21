@@ -1,4 +1,4 @@
-#' ds_dataset_remove
+#' ds_remove
 #'
 #' @param ds path to datastore
 #' @param name name of data-object for which a specific version should be removed
@@ -9,7 +9,7 @@
 #'
 #' @examples
 #' ## not yet
-ds_dataset_remove <- function(ds, name, version=NULL, verbose=TRUE) {
+ds_remove <- function(ds, name, version=NULL, verbose=TRUE) {
   ds_isvalid(ds)
 
   stopifnot(is_scalar_character(name), is_scalar_logical(verbose))

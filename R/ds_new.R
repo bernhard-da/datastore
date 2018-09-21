@@ -52,9 +52,9 @@
 #' v3 <- ds_get(ds, name="df", version=3); identical(v3, df_v3)
 #'
 #' ## remove from datastore
-#' ds_dataset_remove(ds, name="df2", version=NULL) # error
-#' ds_dataset_remove(ds, name="df", version=1) # remove a specific version
-#' ds_dataset_remove(ds, name="df", version=NULL) # remove all versions
+#' ds_remove(ds, name="df2", version=NULL) # error
+#' ds_remove(ds, name="df", version=1) # remove a specific version
+#' ds_remove(ds, name="df", version=NULL) # remove all versions
 #' }
 ds_new <- function(ds, ds_name="datastore") {
   stopifnot(is_scalar_character(ds), is_scalar_character(ds_name))
