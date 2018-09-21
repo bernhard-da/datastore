@@ -18,7 +18,7 @@ ds_dataset_versions <- function(ds, name, verbose=TRUE) {
   res <- ds_read_index(ds)
   if (!is.data.frame(res$info)) {
     if (verbose) {
-      message(paste("no files in datastore",shQuote(ds_info(ds, verbose=FALSE)$ds_name),"--> please use ds_dataset_add()"))
+      message(paste("no files in datastore",shQuote(ds_info(ds, verbose=FALSE)$ds_name),"--> please use ds_add()"))
     }
     return(invisible(NULL))
   }

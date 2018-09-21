@@ -32,9 +32,9 @@
 #'
 #' ## add them to the datastore
 #' ## same name, different versions
-#' ds_dataset_add(ds, dataset=df_v1, name="df", version=1)
-#' ds_dataset_add(ds, dataset=df_v2, name="df", version=2)
-#' ds_dataset_add(ds, dataset=df_v3, name="df", version=3)
+#' ds_add(ds, dataset=df_v1, name="df", version=1)
+#' ds_add(ds, dataset=df_v2, name="df", version=2)
+#' ds_add(ds, dataset=df_v3, name="df", version=3)
 #'
 #' ## read general information about datastore(s)
 #' ds_read_index(ds)

@@ -1,4 +1,4 @@
-#' ds_dataset_add
+#' ds_add
 #'
 #' add a dataset to a datastore
 #'
@@ -12,7 +12,7 @@
 #'
 #' @examples
 #' ## not yet
-ds_dataset_add <- function(ds, dataset, name, version) {
+ds_add <- function(ds, dataset, name, version) {
   ds_isvalid(ds)
   stopifnot(is_scalar_character(name))
   stopifnot(is_scalar_integerish(version))
