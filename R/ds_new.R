@@ -47,9 +47,9 @@
 #' ds_dataset_versions(ds, "df")
 #'
 #' ## retrieve versioned datasets from datastore
-#' v1 <- ds_dataset_get(ds, name="df", version=1); identical(v1, df_v1)
-#' v2 <- ds_dataset_get(ds, name="df", version=2); identical(v2, df_v2)
-#' v3 <- ds_dataset_get(ds, name="df", version=3); identical(v3, df_v3)
+#' v1 <- ds_get(ds, name="df", version=1); identical(v1, df_v1)
+#' v2 <- ds_get(ds, name="df", version=2); identical(v2, df_v2)
+#' v3 <- ds_get(ds, name="df", version=3); identical(v3, df_v3)
 #'
 #' ## remove from datastore
 #' ds_dataset_remove(ds, name="df2", version=NULL) # error

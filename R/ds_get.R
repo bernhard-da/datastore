@@ -1,4 +1,4 @@
-#' ds_dataset_get
+#' ds_get
 #'
 #' retrieves a given dataset in a specific version from a datastore
 #'
@@ -11,7 +11,7 @@
 #'
 #' @examples
 #' ## not yet
-ds_dataset_get <- function(ds, name, version) {
+ds_get <- function(ds, name, version) {
   ds_isvalid(ds)
   stopifnot(is_scalar_integerish(version))
 
