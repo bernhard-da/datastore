@@ -31,5 +31,5 @@ ds_versions <- function(ds, ds_name, verbose=TRUE) {
 
   info <- res$info
   info$version <- as.numeric(info$version)
-  info[ds_name==ds_name,,drop=F]
+  info[info$ds_name==ds_name,,drop=F]
 }
