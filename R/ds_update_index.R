@@ -10,8 +10,6 @@
 #' @examples
 #' ## not yet
 ds_update_index <- function(ds, verbose=TRUE) {
-  ds_isvalid(ds)
-
   out <- list()
 
   if (file.exists(ds_infofile(ds))) {
