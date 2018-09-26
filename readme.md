@@ -11,6 +11,12 @@ This is the datastore package that allows to save versioned datasets in R inspir
 
 ## Useage
 
+### Installation
+As the package is not yet on cran, it can be installed easily directly from github.
+```
+devtools::install_github("bernhard-da/datastore")
+```
+
 ### Load Pkg and create a datastore
 ```
 library(datastore)
