@@ -1,9 +1,9 @@
 Package: datastore
 Type: Package
 Title: Creates a datastore which can contain versioned datasets
-Version: 0.3.0
-Author: Bernhard Meindl <bernhard.meindl@gmail.com>
-Maintainer: Bernhard Meindl <bernhard.meindl@gmail.com>
+Version: 0.3.1
+Date: 2018-09-26
+Authors@R: person("Bernhard", "Meindl", email="bernhard.meindl@data-analysis.at",role = c("aut", "cre"))
 Description: This package implements a functionality to build a custom datastore that can contained different versions of a dataset based on ideas of miniCRAN.
 License: GPL-2
 Depends: jsonlite, rlang, digest
