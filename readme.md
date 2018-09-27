@@ -3,6 +3,9 @@
 This is the datastore package that allows to save versioned datasets in R inspired by the miniCRAN pkg.
 
 ## Updates
+### v0.3.2
+- feature: new function `ds_delete_datastore()` to remove a given datastore
+
 ### v0.3.1
 - recreate DATASTORE file in case files have been (manually) deleted
 
@@ -79,3 +82,6 @@ ds_remove(ds, ds_name="dataset1", version=2)
 # remove all versions
 ds_remove(ds, ds_name="dataset1")
 ```
+
+### Delete the entire datastore
+With `ds_delete_datastore()`, one can delete the given datastore and all files versioned within it.
