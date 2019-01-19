@@ -18,7 +18,7 @@
 <![endif]-->
 </head>
 <body>
-    <div class="container template-home">
+    <div class="container template-article">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
@@ -56,8 +56,126 @@
 
       
       </header><div class="row">
-  <div class="contents col-md-9">
-This package implements a functionality to build a custom datastore that can contained different versions of a dataset based on ideas of miniCRAN.
+  <div class="col-md-9 contents">
+    
+
+    
+    
+<div id="r-package-datastore" class="section level1">
+<div class="page-header"><h1 class="hasAnchor">
+<a href="#r-package-datastore" class="anchor"></a>R-Package <code>datastore</code>
+</h1></div>
+<p>This is the datastore package that allows to save versioned datasets in R inspired by the miniCRAN pkg.</p>
+<p><a href="https://travis-ci.org/bernhard-da/datastore"><img src="https://travis-ci.org/bernhard-da/datastore.svg?branch=master" alt="Travis build status"></a></p>
+<p><a href="https://codecov.io/github/bernhard-da/datastore?branch=master"><img src="https://codecov.io/gh/bernhard-da/datastore/branch/master/graph/badge.svg" alt="Coverage status"></a></p>
+<div id="updates" class="section level2">
+<h2 class="hasAnchor">
+<a href="#updates" class="anchor"></a>Updates</h2>
+<div id="v0-4" class="section level3">
+<h3 class="hasAnchor">
+<a href="#v0-4" class="anchor"></a>v0.4</h3>
+<ul>
+<li>code-improvements by using <code>lintr</code>
+</li>
+<li>setting up automatic deployment using travis -&gt;</li>
+</ul>
+</div>
+<div id="v0-3-2" class="section level3">
+<h3 class="hasAnchor">
+<a href="#v0-3-2" class="anchor"></a>v0.3.2</h3>
+<ul>
+<li>feature: new function <code><a href="reference/ds_delete_datastore.html">ds_delete_datastore()</a></code> to remove a given datastore</li>
+</ul>
+</div>
+<div id="v0-3-1" class="section level3">
+<h3 class="hasAnchor">
+<a href="#v0-3-1" class="anchor"></a>v0.3.1</h3>
+<ul>
+<li>recreate DATASTORE file in case files have been (manually) deleted</li>
+</ul>
+</div>
+<div id="v0-3-0" class="section level3">
+<h3 class="hasAnchor">
+<a href="#v0-3-0" class="anchor"></a>v0.3.0</h3>
+<ul>
+<li>initial version</li>
+</ul>
+</div>
+</div>
+<div id="useage" class="section level2">
+<h2 class="hasAnchor">
+<a href="#useage" class="anchor"></a>Useage</h2>
+<div id="installation" class="section level3">
+<h3 class="hasAnchor">
+<a href="#installation" class="anchor"></a>Installation</h3>
+<p>As the package is not yet on cran, it can be installed easily directly from github.</p>
+<pre><code><a href="https://www.rdocumentation.org/packages/devtools/topics/reexports">devtools::install_github("bernhard-da/datastore")</a></code></pre>
+</div>
+<div id="load-pkg-and-create-a-datastore" class="section level3">
+<h3 class="hasAnchor">
+<a href="#load-pkg-and-create-a-datastore" class="anchor"></a>Load Pkg and create a datastore</h3>
+<pre><code><a href="https://www.rdocumentation.org/packages/base/topics/library">library(datastore)
+ds &lt;- "/tmp/mydatastore"
+unlink(ds, recursive=TRUE)
+ds_new(ds)</a></code></pre>
+</div>
+<div id="add-datasets-to-the-store" class="section level3">
+<h3 class="hasAnchor">
+<a href="#add-datasets-to-the-store" class="anchor"></a>Add datasets to the store</h3>
+<p>Using <code><a href="reference/ds_add.html">ds_add()</a></code> one can add a dataset in different versions to the datastore. Note that the data input is not limited to <code>data.frames</code> but can be any R object.</p>
+<pre><code>df1 &lt;- data.frame(x=1)
+df2 &lt;- data.frame(x=1, y=2)
+df3 &lt;- list(x=1, y=2, z=3)
+
+# add a dataset to the datastore
+ds_add(ds, obj=df1, ds_name="dataset1", version=1)
+ds_add(ds, obj=df2, ds_name="dataset1", version=2)
+ds_add(ds, obj=df3, ds_name="dataset1", version=3)</code></pre>
+</div>
+<div id="information-about-current-state" class="section level3">
+<h3 class="hasAnchor">
+<a href="#information-about-current-state" class="anchor"></a>Information about current state</h3>
+<p>this functions shows some generic information about the given datastore</p>
+<pre><code><a href="reference/ds_info.html">ds_info(ds)</a></code></pre>
+</div>
+<div id="check-for-existence" class="section level3">
+<h3 class="hasAnchor">
+<a href="#check-for-existence" class="anchor"></a>Check for existence</h3>
+<p>Using <code>ds_exist()</code> one can check if a dataset in a given version exists in the datastore.</p>
+<pre><code><a href="reference/ds_exists.html">ds_exists(ds, ds_name="dataset1", version=1)
+ds_exists(ds, ds_name="dataset1", version=5)</a></code></pre>
+</div>
+<div id="which-versions-exist" class="section level3">
+<h3 class="hasAnchor">
+<a href="#which-versions-exist" class="anchor"></a>Which versions exist?</h3>
+<p>Using <code>ds_versions</code> one gets an overview over all versions of a stored dataset in the given datastore.</p>
+<pre><code><a href="reference/ds_versions.html">ds_versions(ds, ds_name="dataset1")</a></code></pre>
+</div>
+<div id="fetch-data" class="section level3">
+<h3 class="hasAnchor">
+<a href="#fetch-data" class="anchor"></a>Fetch data</h3>
+<p>Using <code><a href="reference/ds_get.html">ds_get()</a></code> and <code><a href="reference/ds_get_latest.html">ds_get_latest()</a></code> we can fetch specific versions of a dataset from the datastore.</p>
+<pre><code><a href="reference/ds_get.html"># specific version
+ds_get(ds, ds_name="dataset1", version=1)
+# latest version
+ds_get_latest(ds, ds_name="dataset1")</a></code></pre>
+</div>
+<div id="remove-one-or-all-versions-of-a-dataset" class="section level3">
+<h3 class="hasAnchor">
+<a href="#remove-one-or-all-versions-of-a-dataset" class="anchor"></a>Remove one or all versions of a dataset</h3>
+<p>Using <code><a href="reference/ds_remove.html">ds_remove()</a></code> one can remove a single (or all) versions of a dataset from a given datastore.</p>
+<pre><code><a href="reference/ds_remove.html"># remove a specific version
+ds_remove(ds, ds_name="dataset1", version=2)
+# remove all versions
+ds_remove(ds, ds_name="dataset1")</a></code></pre>
+</div>
+<div id="delete-the-entire-datastore" class="section level3">
+<h3 class="hasAnchor">
+<a href="#delete-the-entire-datastore" class="anchor"></a>Delete the entire datastore</h3>
+<p>With <code><a href="reference/ds_delete_datastore.html">ds_delete_datastore()</a></code>, one can delete the given datastore and all files versioned within it.</p>
+</div>
+</div>
+</div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
@@ -74,8 +192,10 @@ This package implements a functionality to build a custom datastore that can con
 </ul>
 </div>
 
-  </div>
+      </div>
+
 </div>
+
 
       <footer><div class="copyright">
   <p>Developed by Bernhard Meindl.</p>
