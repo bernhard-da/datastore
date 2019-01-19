@@ -4,11 +4,12 @@ ds_isvalid <- function(ds) {
   finfo <- ds_infofile(ds)
   if (file.exists(finfo)) {
     res <- fromJSON(finfo)
-    stopifnot(is.list(res), length(res)==6, names(res)==c("ds_name","created_at","datastore_path","last_indexed","datasets","info"))
+    stopifnot(is.list(res), length(res) == 6)
+    stopifnot(names(res) == c("ds_name", "created_at", "datastore_path", "last_indexed", "datasets", "info"))
 
-    if (!is.na(res$info) && length(list.files(ds_filepath(ds)))!=nrow(res$info)) {
+    if (!is.na(res$info) && length(list.files(ds_filepath(ds))) != nrow(res$info)) {
       # recreate (perhaps files have been manually deleted)
-      ds_update_index(ds, verbose=FALSE)
+      ds_update_index(ds, verbose = FALSE)
     }
   }
   return(invisible(TRUE))

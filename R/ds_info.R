@@ -17,11 +17,11 @@
 #' ## not yet
 ds_info <- function(ds, verbose=TRUE) {
   print.datastore <- function(x, ...) {
-    message(paste("The datastore",shQuote(x$ds_name),"was created at",shQuote(x$created_at)))
+    message(paste("The datastore", shQuote(x$ds_name), "was created at", shQuote(x$created_at)))
     message(paste("The root is located at", shQuote(x$datastore_path)))
 
-    if (x$nr_datasets>0) {
-      message(paste("This datastore contains", x$nr_files,"files of",x$nr_datasets,"datasets"))
+    if (x$nr_datasets > 0) {
+      message(paste("This datastore contains", x$nr_files, "files of", x$nr_datasets, "datasets"))
     } else {
       message(paste("This datastore is currently empty"))
     }

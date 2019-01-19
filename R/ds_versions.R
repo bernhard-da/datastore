@@ -18,18 +18,18 @@ ds_versions <- function(ds, ds_name, verbose=TRUE) {
   res <- ds_read_index(ds)
   if (!is.data.frame(res$info)) {
     if (verbose) {
-      message(paste("no files in datastore",shQuote(ds_info(ds, verbose=FALSE)$ds_name),"--> please use ds_add()"))
+      message(paste("no files in datastore", shQuote(ds_info(ds, verbose = FALSE)$ds_name), "--> please use ds_add()"))
     }
     return(invisible(NULL))
   }
   if (!ds_name %in% res$datasets) {
     if (verbose) {
-      message(paste(shQuote(ds_name),"not in datastore"))
+      message(paste(shQuote(ds_name), "not in datastore"))
     }
     return(invisible(NULL))
   }
 
   info <- res$info
   info$version <- as.numeric(info$version)
-  info[info$ds_name==ds_name,,drop=F]
+  info[info$ds_name == ds_name, , drop = FALSE]
 }

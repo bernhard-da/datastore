@@ -15,16 +15,16 @@ ds_get <- function(ds, ds_name, version) {
   ds_isvalid(ds)
   stopifnot(is_scalar_integerish(version))
 
-  res <- ds_versions(ds, ds_name=ds_name)
-  if (nrow(res)==0) {
-    stop(paste("Dataset",shQuote(substitute(ds_name)),"not found in datastore"), call.=FALSE)
+  res <- ds_versions(ds, ds_name = ds_name)
+  if (nrow(res) == 0) {
+    stop(paste("Dataset", shQuote(substitute(ds_name)), "not found in datastore"), call. = FALSE)
   }
 
   if (!version %in% res$version) {
-    stop(paste("Dataset",shQuote(substitute(ds_name)),"not found in version",version,"in datastore"), call.=FALSE)
+    stop(paste("Dataset", shQuote(substitute(ds_name)), "not found in version", version, "in datastore"), call. = FALSE)
   }
 
-  fin <- res[res$version==version,"filepath"]
-  stopifnot(length(fin)==1)
-  return(readRDS(file=fin))
+  fin <- res[res$version == version, "filepath"]
+  stopifnot(length(fin) == 1)
+  return(readRDS(file = fin))
 }

@@ -65,22 +65,16 @@ ds_new <- function(ds) {
   stopifnot(is_scalar_character(ds))
 
   if (file.exists(ds)) {
-    stop("Directory at",shQuote(ds),"already exists")
+    stop("Directory at", shQuote(ds), "already exists")
   }
   res <- suppressWarnings(dir.create(ds))
   if (!res) {
     stop("datastore could not be initialized, invalid path or problem with permissions?")
   }
-  dir.create(file.path(ds,"datastore"))
-  dir.create(file.path(ds,"datastore", "files"))
-
-  #info <- list()
-  #info$ds_name <- "datastore"
-  #info$created_at <- ds_timestamp()
-  #info$datastore_path <- ds
-  #cat(toJSON(info), file=ds_infofile(ds))
+  dir.create(file.path(ds, "datastore"))
+  dir.create(file.path(ds, "datastore", "files"))
 
   ds_update_index(ds)
-  message(paste("Datastore at",shQuote(file.path(ds)),"successfully initialized."))
+  message(paste("Datastore at", shQuote(file.path(ds)), "successfully initialized."))
   return(invisible(ds))
 }

@@ -13,12 +13,12 @@
 ds_get_latest <- function(ds, ds_name) {
   ds_isvalid(ds)
 
-  res <- ds_versions(ds, ds_name=ds_name)
-  if (nrow(res)==0) {
-    stop(paste("Dataset",shQuote(substitute(ds_name)),"not found in datastore"), call.=FALSE)
+  res <- ds_versions(ds, ds_name = ds_name)
+  if (nrow(res) == 0) {
+    stop(paste("Dataset", shQuote(substitute(ds_name)), "not found in datastore"), call. = FALSE)
   }
 
-  fin <- res[res$version==max(res$version),"filepath"]
-  stopifnot(length(fin)==1)
-  return(readRDS(file=fin))
+  fin <- res[res$version == max(res$version), "filepath"]
+  stopifnot(length(fin) == 1)
+  return(readRDS(file = fin))
 }

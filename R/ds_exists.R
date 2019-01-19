@@ -16,18 +16,18 @@ ds_exists <- function(ds, ds_name, version=NULL, verbose=TRUE) {
     stopifnot(is_scalar_integerish(version))
   }
 
-  res <- ds_versions(ds, ds_name=ds_name, verbose=verbose)
+  res <- ds_versions(ds, ds_name = ds_name, verbose = verbose)
   if (is.null(res)) {
     return(FALSE)
   }
   if (is.null(version)) {
-    if (nrow(res)>0) {
+    if (nrow(res) > 0) {
       return(TRUE)
     } else {
       return(FALSE)
     }
   }
 
-  res <- res[res$version==version,]
-  return(ifelse(nrow(res)>0, TRUE, FALSE))
+  res <- res[res$version == version, ]
+  return(ifelse(nrow(res) > 0, TRUE, FALSE))
 }
