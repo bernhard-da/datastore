@@ -15,9 +15,7 @@ knitr::opts_chunk$set(
 
 This is the datastore package that allows to save versioned datasets in R inspired by the miniCRAN pkg.
 
-[![Travis build status](https://travis-ci.org/bernhard-da/datastore.svg?branch=master)](https://travis-ci.org/bernhard-da/datastore)
-
-[![Coverage status](https://codecov.io/gh/bernhard-da/datastore/branch/master/graph/badge.svg)](https://codecov.io/github/bernhard-da/datastore?branch=master)
+[![Travis build status](https://travis-ci.org/bernhard-da/datastore.svg?branch=master)](https://travis-ci.org/bernhard-da/datastore) [![Coverage status](https://codecov.io/gh/bernhard-da/datastore/branch/master/graph/badge.svg)](https://codecov.io/github/bernhard-da/datastore?branch=master) [![Binder](http://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/bernhard-da/datastore/master)
 
 ## Updates
 ### v0.4
