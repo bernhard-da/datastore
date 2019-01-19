@@ -1,8 +1,29 @@
+---
+output: github_document
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
 # R-Package `datastore`
 
 This is the datastore package that allows to save versioned datasets in R inspired by the miniCRAN pkg.
 
+[![Travis build status](https://travis-ci.org/bernhard-da/datastore.svg?branch=master)](https://travis-ci.org/bernhard-da/datastore)
+
+[![Coverage status](https://codecov.io/gh/bernhard-da/datastore/branch/master/graph/badge.svg)](https://codecov.io/github/bernhard-da/datastore?branch=master)
+
 ## Updates
+### v0.4
+- code-improvements by using `lintr`
+- setting up automatic deployment using travis -> 
+
 ### v0.3.2
 - feature: new function `ds_delete_datastore()` to remove a given datastore
 

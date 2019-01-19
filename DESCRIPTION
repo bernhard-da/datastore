@@ -6,7 +6,13 @@ Date: 2019-01-19
 Authors@R: person("Bernhard", "Meindl", email="bernhard.meindl@data-analysis.at",role = c("aut", "cre"))
 Description: This package implements a functionality to build a custom datastore that can contained different versions of a dataset based on ideas of miniCRAN.
 License: GPL-2
-Depends: jsonlite, rlang, digest
+Depends: 
+    jsonlite,
+    rlang,
+    digest,
+    R (>= 3.1)
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.1.1
+Suggests: 
+    covr
