@@ -5,7 +5,7 @@
 #' @return a list with the following elements
 #' \itemize{
 #' \item \strong{ds_name}: name of the datastore
-#' \item \strong{created_at}: timestamp when the datastare has been created
+#' \item \strong{created_at}: timestamp when the datastore has been created
 #' \item \strong{datastore_path}: path to the root of the datastore
 #' \item \strong{datasets}: names of data objects for which at least one version is stored in the datastore\code{NA}
 #' \item \strong{nr_datasets}: number of different data objects available from the datastore
