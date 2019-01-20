@@ -11,10 +11,10 @@
 ds_delete_datastore <- function(ds) {
   ds_isvalid(ds)
   res <- unlink(ds, recursive = TRUE)
-  if (res) {
-    message("The datastore located at", shQuote(ds), "was deleted!")
+  if (res == 0) {
+    message(paste("The datastore located at", shQuote(ds), "was deleted!"))
   } else {
-    warning("The datastore located at", shQuote(ds), "could not be deleted!")
+    warning(paste("The datastore located at", shQuote(ds), "could not be deleted!"))
   }
   return(invisible(NULL))
 }
