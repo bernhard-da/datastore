@@ -4,7 +4,7 @@ R-Package `datastore`
 
 This is the datastore package that allows to save versioned datasets in R inspired by the miniCRAN pkg.
 
-[![Travis build status](https://travis-ci.org/bernhard-da/datastore.svg?branch=master)](https://travis-ci.org/bernhard-da/datastore) [![Coverage status](https://codecov.io/gh/bernhard-da/datastore/branch/master/graph/badge.svg)](https://codecov.io/github/bernhard-da/datastore?branch=master) [![GitHub last commit](https://img.shields.io/github/last-commit/bernhard-da/datastore?logo=github)](https://github.com/bernhard-da/datastore/commits/master) [![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/bernhard-da/datastore.svg?logo=github)](https://github.com/bernhard-da/datastore)
+[![Travis build status](https://travis-ci.org/bernhard-da/datastore.svg?branch=master)](https://travis-ci.org/bernhard-da/datastore) [![Coverage status](https://codecov.io/gh/bernhard-da/datastore/branch/master/graph/badge.svg)](https://codecov.io/github/bernhard-da/datastore?branch=master) [![GitHub last commit](https://img.shields.io/github/last-commit/bernhard-da/datastore.svg?logo=github)](https://github.com/bernhard-da/datastore/commits/master) [![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/bernhard-da/datastore.svg?logo=github)](https://github.com/bernhard-da/datastore)
 
 Updates
 -------
