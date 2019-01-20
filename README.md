@@ -6,26 +6,6 @@ This is the datastore package that allows to save versioned datasets in R inspir
 
 [![Travis build status](https://travis-ci.org/bernhard-da/datastore.svg?branch=master)](https://travis-ci.org/bernhard-da/datastore) [![Coverage status](https://codecov.io/gh/bernhard-da/datastore/branch/master/graph/badge.svg)](https://codecov.io/github/bernhard-da/datastore?branch=master) [![GitHub last commit](https://img.shields.io/github/last-commit/bernhard-da/datastore.svg?logo=github)](https://github.com/bernhard-da/datastore/commits/master) [![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/bernhard-da/datastore.svg?logo=github)](https://github.com/bernhard-da/datastore)
 
-Updates
--------
-
-### v0.4
-
--   code-improvements by using `lintr`
--   setting up automatic deployment using travis
-
-### v0.3.2
-
--   feature: new function `ds_delete_datastore()` to remove a given datastore
-
-### v0.3.1
-
--   recreate DATASTORE file in case files have been (manually) deleted
-
-### v0.3.0
-
--   initial version
-
 Useage
 ------
 
