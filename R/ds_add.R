@@ -19,8 +19,7 @@ ds_add <- function(ds, obj, ds_name, version) {
 
   # version already exists?
   if (ds_exists(ds, ds_name = ds_name, version = version, verbose = FALSE)) {
-    err <- sprintf("%s in version %s already exists in datastore.",
-      substitute(ds_name), version)
+    err <- paste(substitute(ds_name), "in version", version, "already exists in datastore.")
     stop(err, call. = FALSE)
   }
 
@@ -32,8 +31,7 @@ ds_add <- function(ds, obj, ds_name, version) {
   saveRDS(obj, file = fout, compress = TRUE)
 
   ds_update_index(ds, verbose = FALSE)
-  msg <- sprintf("%s in version %s added to datastore.",
-    substitute(obj), version)
+  msg <- paste(substitute(obj), "in version", version, "added to the datastore.")
   message(msg)
   return(invisible(TRUE))
 }
